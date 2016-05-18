@@ -1,0 +1,28 @@
+__default_facts: &default_facts
+    architecture: x86_64
+    osfamily: RedHat
+    operatingsystem: CentOS
+
+webserver_test:
+    <<: *default_facts
+    fqdn: webserver.test.local
+    environment: test
+    profile: webserver
+
+database_test:
+    <<: *default_facts
+    fqdn: database.test.local
+    environment: test
+    profile: database
+
+webserver_live:
+    <<: *default_facts
+    fqdn: webserver.live.local
+    environment: live
+    profile: webserver
+
+database_live:
+    <<: *default_facts
+    fqdn: database.live.local
+    environment: live
+    profile: database

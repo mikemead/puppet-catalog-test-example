@@ -1,0 +1,17 @@
+---
+:backends: 
+  - yaml
+
+:logger: console
+
+:hierarchy: 
+  - "environments/%{::environment}/%{::hostname}"
+  - "environments/%{::environment}/common"
+  - "%{::hostname}"
+  - common
+
+:yaml:
+    :datadir: hieradata
+
+:puppet:
+    :datasource: data
